@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #0f172a;          /* Cor de fundo principal */
+    --secondary-color: #38bdf8;        /* Cor azul */
+    --accent-color: #6C79FF;           /* Cor de destaque nas animações */
+    --text-color-light: #f8fafc;       /* Cor do texto claro */
+    --text-color-dark: #cbd5e1;        /* Cor do texto secundário */
+    --text-color-darker: #94a3b8;      /* Cor do texto no footer */
+    --bg-dark: rgba(15, 23, 42, 0.8);  /* Cor de fundo com opacidade */
+    --bg-secondary: rgba(30, 41, 59, 0.5); /* Cor de fundo para seções secundárias */
+    --bg-tertiary: rgba(12, 74, 110, 0.5); /* Cor de fundo para inputs */
+    --hover-bg: rgba(51, 65, 85, 0.5); /* Cor de fundo ao passar o mouse */
+    --hover-bg-dark: rgba(51, 65, 85, 0.8); /* Cor de fundo mais escura ao passar o mouse */
+    --border-color: #0ea5e9;          /* Cor de borda */
+    --border-hover-color: rgba(56, 189, 248, 0.1); /* Cor de borda ao passar o mouse */
+    --button-bg: #0ea5e9;              /* Cor de fundo dos botões */
+    --button-bg-hover: #0284c7;        /* Cor de fundo ao passar o mouse no botão */
+    --link-hover-color: #7dd3fc;       /* Cor do link ao passar o mouse */
+    --icon-hover-scale: 1.1;            /* Escala de ícones ao passar o mouse */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+/*=================
+HEADER
+=================*/
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-dark);
+    opacity: 97%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #38bdf8;
+}
+
+header ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+header ul li a:hover::after {
+    width: 100%;
+}
+
+/*=================
+SOBRE
+=================*/
+
+.sobre-container {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    margin-bottom: 10px;
+}
+
+.sobre-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.sobre-box img {
+    height: 260px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+
+.sobre-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.sobre-text h1 {
+    display: flex;
+    align-items: center;
+    gap: 5.4px;
+}
+
+.palavras {
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.palavras span {
+    display: block;
+    animation: slide 8s infinite;
+    color: #38bdf8;
+}
+
+@keyframes  slide {
+    0%, 20% {transform: translateY(0);}
+    25%, 45% {transform: translateY(-100%);}
+    50%, 70% {transform: translateY(-200%);}
+    75%, 95% {transform: translateY(-300%);}
+    100% {transform: translateY(0);}
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.links button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    color: var(--border-color);
+    font-size: 1.5em;
+    transition: 0.2s ease;
+}
+
+.links button:hover {
+    transform: translateY(-10%);
+    border: 2px solid rgb(0, 3, 94);
+    color: beige;
+}
+
+/*=================
+TECNOLOGIAS
+=================*/
+
+.tech {
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    margin-bottom: 10px;
+}
+
+.tech-box {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.techs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.techs h3 {
+    font-size: 2em;
+    display: flex;
+    gap: 10px;
+}
+
+.tech-icon {
+    background-color: var(--bg-tertiary);
+    border-radius: 20px;
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-icon img {
+    height: 100px;
+}
+
+/*=================
+PROJETOS
+=================*/
+
+.projetos-container {
+    width: 100%;
+    height: 700px;
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.projetos-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.projeto {
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.projeto img {
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+}
+
+.projeto h3 {
+    font-size: 1.3em;
+    color: #0ea5e9;
+}
+
+.projeto button {
+    padding: 15px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--button-bg);
+    color: #fff;
+    transition: 0.2s ease;
+}
+
+.projeto button:hover {
+    transform: translateY(-10%);
+    background-color:rgb(0, 3, 94);
+    color: beige;
+}
+
+/*=================
+CONTACTO
+=================*/
+
+.contact-section {
+    width: 100%;
+    height: 600px;
+    padding: 80px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    margin-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form input, textarea {
+    width: 400px;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    background-color: #0285c733;
+    transition: 0.2s ease;
+}
+
+.form input::placeholder, textarea::placeholder {
+    color: #c6c6c6;
+}
+
+.form input:focus, textarea:focus {
+    transform: scale(1.1);
+    outline: none;
+    background-color: var(--hover-bg-dark);
+}
+
+#enviar {
+    padding: 15px 20px;
+    font-size: 1em;
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    transition: 0.2s ease;
+}
+
+#enviar:hover {
+    transform: translateY(-10%);
+    background-color: rgb(0, 3, 94);
+    color: beige;
+}
+
+/*=================
+FOOTER
+=================*/
+
+footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-dark);
+    color: var(--text-color-darker);
+}
+
+footer span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.4px;
+}
+
+@media (max-width: 768px) {
+
+    .sobre-container {
+        padding-top: 140px;
+    }
+
+    .sobre-box {
+        flex-direction: column;
+    }
+
+    .sobre-text {
+        width: 100%;
+        text-align: left;
+    }
+
+    .sobre-text h1 {
+        font-size: 25px;
+        width: 400px;
+    }
+
+    .palavras {
+        height: 35px;
+    }
+
+    .techs {
+        flex-direction: column;
+    }
+}
