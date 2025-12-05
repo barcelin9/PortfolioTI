@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imgs/9942334.png">
+    <title>Guilherme's Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#tech">Tecnologias</a></li>
+            <li><a href="#proj">Projetos</a></li>
+            <li><a href="#contato">Contate-me</a></li>
+        </ul>
+    </header>
+    <section class="sobre-container">
+        <div id="sobre" class="sobre-box">
+            <div class="sobre-text">
+                <h1>
+                    Eu sou um
+                    <span class="palavras">
+                        <span>Programador</span>
+                        <span>Desenvolvedor</span>
+                        <span>Estudante</span>
+                        <span>Designer</span>
+                    </span>
+                </h1>
+                <p>Olá, me chamo Guilherme Barcelo das Neves e quero atuar na área de TI. Tenho 16 anos e atualmente
+                    estou cursando o 2º ano do Ensino Médio Técnico cursando Desenvolvimento de Sistemas</p>
+                <div class="links">
+                    <a href="https://github.com/barcelin9" target="_blank"><button><i
+                                class="bi bi-github"></i></button></a>
+                    <a href="https://www.linkedin.com/in/guilherme-b-4454aa376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
+                    <a href="https://www.instagram.com/guibarcelo_/" target="_blank"><button><i
+                                class="bi bi-instagram"></i></button></a>
+                    <a href="arquivo/Currículo de Guilherme OFICIAL.pdf" download="Currículo"><button><i
+                                class="bi bi-download"></i></button></a>
+                </div>
+            </div>
+            <img src="imgs/images.jpeg" alt="">
+        </div>
+    </section>
+    <section class="tech">
+        <div id="tech" class="tech-box">
+            <div id="frontend" class="techs">
+                <h3><i class="bi bi-display"></i>Frontend</h3>
+                <div class="tech-icon">
+                    <h4>HTML5</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+                </div>
+                <div class="tech-icon">
+                    <h4>CSS3</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+                </div>
+                <div class="tech-icon">
+                    <h4>JavaScript ES6</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+                </div>
+                <div class="tech-icon">
+                    <h4>React.js</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+                </div>
+            </div>
+
+            <div id="backend" class="techs">
+                <h3><i class="bi bi-hdd-stack"></i>Backend</h3>
+                <div class="tech-icon">
+                    <h4>PHP</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+                </div>
+                <div class="tech-icon">
+                    <h4>MySQL</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+                </div>
+                <div class="tech-icon">
+                    <h4>Python</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+                </div>
+                <div class="tech-icon">
+                    <h4>Java</h4>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projetos-container">
+        <div class="projetos-box" id="proj">
+            <div class="projeto" id="taskManager">
+                <img src="imgs/65ef763f685dc4979bc2b362_ODT-tability_understanding-tasks-projects-goals.jpg"
+                    alt="Imagem do projeto">
+                <h3>Gerenciador de tarefas</h3>
+                <p>Este site é um Gerenciador de Tarefas onde é possível adicionar tarefas (título e descrição), excluir
+                    tarefas, ver a descrição da tarefa e marcar uma tarefa como concluída</p>
+                <a href="https://todo-checklist-three.vercel.app/" target="_blank"><button>Ver site</button></a>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact Me</h2>
+        <form action="https://formsubmit.co/guilhermebarcn@gmail.com" method="POST" id="contato">
+            <div class="form">
+                <input type="text" name="name" placeholder="Your name" required />
+                <input type="email" name="email" placeholder="Your e-mail" required />
+                <textarea name="message" placeholder="Your message" required id="texto" rows="6"></textarea>
+
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://google.com" />
+
+                <button type="submit" id="enviar">Send</button>
+            </div>
+        </form>
+    </section>
+    <footer class="footer">
+        <span><p>&copy;<div id="ano"></div></span> Guilherme Barcelo das Neves.</p>
+    </footer>
+    <script>
+        feather.replace();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Exibir o consentimento de cookies
+            document.getElementById('cookieConsent').style.display = 'flex';
+
+            // Função para aceitar cookies
+            window.aceitarCookies = function () {
+                document.getElementById('cookieConsent').style.display = 'none';
+            };
+
+            // Validação do e-mail
+            document.querySelector('.contact-form').addEventListener('submit', function (event) {
+                const email = document.getElementById('email').value;
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email)) {
+                    alert('Por favor, insira um e-mail válido.');
+                    event.preventDefault(); // Evita que o formulário seja enviado
+                }
+            });
+        });
+        var data = new Date();
+        var ano = data.getFullYear();
+        var a = document.getElementById('ano');
+
+        a.innerText = `${ano}`;
+    </script>
+</body>
+
+</html>
