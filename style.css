@@ -36,6 +36,10 @@ body {
     color: var(--text-color-light);
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 /*=================
 HEADER
 =================*/
@@ -364,6 +368,10 @@ footer span {
 }
 
 @media (max-width: 768px) {
+    
+    header {
+        font-size: 13.5px;
+    }
 
     .sobre-container {
         padding-top: 140px;
@@ -375,7 +383,13 @@ footer span {
 
     .sobre-text {
         width: 100%;
-        text-align: left;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .sobre-text h1, p {
+        margin-left: 34px;
     }
 
     .sobre-text h1 {
@@ -384,10 +398,28 @@ footer span {
     }
 
     .palavras {
-        height: 35px;
+        height: 33.5px;
     }
 
     .techs {
         flex-direction: column;
+    }
+    
+    .projeto {
+        width: 360px;
+        padding: 20px;
+    }
+    
+    .projeto p {
+        width: 300px;
+        margin-left: -2px;
+    }
+    
+    .projeto img {
+        height: 120px;
+    }
+    
+    .form input, textarea {
+        width: 300px;
     }
 }
